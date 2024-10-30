@@ -40,11 +40,12 @@ body {
 }
 
 .dice {
+    margin-top: 20px;
     width: 180px;
     height: 180px;
 }
 .dice-red {
-    fill: #E98B8B;
+    fill: #c9e514;
 }
 .dice-blue {
     fill: #449fcc;

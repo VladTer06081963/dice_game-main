@@ -6,13 +6,13 @@ const actionBtn = document.querySelector("[data-action-btn]");
 
 actionBtn.addEventListener("click", () => {
     render();
-});
+})
 
 const render = () => {
     const player1 = generateRandomNumber();
     const player2 = generateRandomNumber();
-    // const player3 = generateRandomNumber();
 
+    container.innerHTML = "";
 
     container.insertAdjacentHTML("beforeend", `
         <svg class="dice dice-red">
@@ -20,33 +20,10 @@ const render = () => {
         </svg>
     `)
     container.insertAdjacentHTML("beforeend", `
-    <svg class="dice dice-blue">
-    <use href="sprites.svg#dice-${player2}-icon"></use>
-    </svg>
+        <svg class="dice dice-blue">
+          <use href="sprites.svg#dice-${player2}-icon"></use>
+        </svg>
     `)
-    
-    // container.insertAdjacentHTML("beforeend", `
-    //     <svg class="dice dice-red">
-    //       <use href="sprites.svg#dice-${player3}-icon"></use>
-    //     </svg>
-    // `)
-
-
-
-const calculateScore = (diceValues) => {
-  let score = 0;
-  diceValues.forEach(value => {
-    if (value === 3) {
-      score += 2;
-    } else if (value === 5) {
-      score += 4;
-    } else if (value === 1) {
-      score += 1;
-    }
-  });
-  return score;
-};
-
 
     if (player1 === player2) {
         gameInfo.textContent = "НИЧЬЯ!";
@@ -60,8 +37,6 @@ const calculateScore = (diceValues) => {
         gameInfo.textContent = "Победил игрок 2";
         gameInfo.style.color = "#449fcc";
     }
-    
-
 }
 
 render();
